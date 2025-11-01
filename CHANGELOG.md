@@ -21,15 +21,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Network status detection and handling
 
 ### Features
-- ðŸ—‚ï¸ Automatic asset caching for static files
-- ðŸ’¾ Offline data persistence with IndexedDB
-- ðŸ”„ Background sync for queued requests
-- âš¡ Simple React hooks for offline data management
-- ðŸ§° CLI tools for easy setup and build integration
-- ðŸŒ Service worker generation with pre-configured caching
-- ðŸ“¦ Zero configuration with sensible defaults
-- ðŸŽ¯ Multiple caching strategies support
-- ðŸ› ï¸ Framework agnostic (React, Vue, Vanilla JS support)
+- Automatic asset caching for static files
+- Offline data persistence with IndexedDB
+- Background sync for queued requests
+- Simple React hooks for offline data management
+- CLI tools for easy setup and build integration
+- Service worker generation with pre-configured caching
+- Zero configuration with sensible defaults
+- Multiple caching strategies support
+- Framework agnostic (React, Vue, Vanilla JS support)
 
 ## [0.1.0] - 2025-11-01
 
