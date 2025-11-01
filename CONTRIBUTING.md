@@ -1,135 +1,128 @@
-﻿# Contributing to Offly
-
+﻿Contributing to Offly
 Thank you for your interest in contributing to Offly! We welcome contributions from everyone.
 
-## ðŸš€ Getting Started
+🚀 Getting Started
+Prerequisites
+Node.js 16 or higher
 
-### Prerequisites
+npm or yarn
 
-- Node.js 16 or higher
-- npm or yarn
-- Git
+Git
 
-### Setting up the development environment
+Setting Up the Development Environment
+Fork the repository
 
-1. Fork the repository
-2. Clone your fork:
-   ```bash
-   git clone https://github.com/your-username/Offly.git
-   cd Offly
-   ```
+Clone your fork
 
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
+bash
+git clone https://github.com/your-username/Offly.git
+cd Offly
+Install dependencies
 
-4. Build the project:
-   ```bash
-   npm run build
-   ```
+bash
+npm install
+Build the project
 
-5. Run tests:
-   ```bash
-   npm test
-   ```
+bash
+npm run build
+Run tests
 
-## ðŸ› ï¸ Development Workflow
-
-### Project Structure
-
-```
+bash
+npm test
+🛠️ Development Workflow
+Project Structure
+text
 Offly/
-â”œâ”€â”€ src/
-â”‚   â”œâ”€â”€ cli/                 # CLI commands
-â”‚   â”‚   â”œâ”€â”€ commands/        # Individual CLI commands
-â”‚   â”‚   â””â”€â”€ utils/          # CLI utilities
-â”‚   â”œâ”€â”€ runtime/            # Runtime library
-â”‚   â”‚   â”œâ”€â”€ cacheManager.ts # Cache management
-â”‚   â”‚   â”œâ”€â”€ syncManager.ts  # Background sync
-â”‚   â”‚   â”œâ”€â”€ fetchWrapper.ts # Enhanced fetch
-â”‚   â”‚   â””â”€â”€ useOfflineData.ts # React hooks
-â”‚   â”œâ”€â”€ types/              # TypeScript definitions
-â”‚   â”œâ”€â”€ index.ts            # Main export
-â”‚   â””â”€â”€ react.ts            # React-specific exports
-â”œâ”€â”€ tests/                  # Test files
-â””â”€â”€ dist/                   # Built files
-```
+├── src/
+│   ├── cli/                 # CLI commands
+│   │   ├── commands/        # Individual CLI commands
+│   │   └── utils/           # CLI utilities
+│   ├── runtime/             # Runtime library
+│   │   ├── cacheManager.ts  # Cache management
+│   │   ├── syncManager.ts   # Background sync
+│   │   ├── fetchWrapper.ts  # Enhanced fetch
+│   │   └── useOfflineData.ts# React hooks
+│   ├── types/               # TypeScript definitions
+│   ├── index.ts             # Main export
+│   └── react.ts             # React-specific exports
+├── tests/                   # Test files
+└── dist/                    # Built files
+Making Changes
+Create a feature branch:
 
-### Making Changes
+bash
+git checkout -b feature/your-feature-name
+Make your changes.
 
-1. Create a feature branch:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
+Add tests for new functionality.
 
-2. Make your changes
-3. Add tests for new functionality
-4. Run the test suite:
-   ```bash
-   npm test
-   ```
+Run the test suite:
 
-4. Build the project:
-   ```bash
-   npm run build
-   ```
+bash
+npm test
+Build the project:
 
-5. Run linting:
-   ```bash
-   npm run lint
-   ```
+bash
+npm run build
+Run linting:
 
-6. Commit your changes:
-   ```bash
-   git commit -m "feat: add your feature description"
-   ```
+bash
+npm run lint
+Commit your changes:
 
-### Commit Messages
+bash
+git commit -m "feat: add your feature description"
+🧾 Commit Messages
+We follow the Conventional Commits standard.
 
-We follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
+feat: - New features
 
-- `feat:` - New features
-- `fix:` - Bug fixes
-- `docs:` - Documentation changes
-- `style:` - Code style changes (formatting, etc.)
-- `refactor:` - Code refactoring
-- `test:` - Adding or updating tests
-- `chore:` - Maintenance tasks
+fix: - Bug fixes
+
+docs: - Documentation updates
+
+style: - Code style changes
+
+refactor: - Code refactoring
+
+test: - Adding or updating tests
+
+chore: - Maintenance tasks
 
 Examples:
-- `feat: add Vue.js composables support`
-- `fix: resolve cache expiration bug`
-- `docs: update README with new examples`
 
-## ðŸ§ª Testing
+feat: add Vue.js composables support
 
-### Running Tests
+fix: resolve cache expiration bug
 
-```bash
+docs: update README with new examples
+
+🧪 Testing
+Running Tests
+bash
 # Run all tests
 npm test
 
-# Run tests in watch mode
+# Watch mode
 npm run test:watch
 
-# Run tests with coverage
+# With coverage
 npm run test:coverage
 
-# Run tests with UI
+# With UI
 npm run test:ui
-```
+Writing Tests
+Place all test files under tests/
 
-### Writing Tests
+Use descriptive test names
 
-- Place test files in the `tests/` directory
-- Use descriptive test names
-- Test both success and error cases
-- Mock external dependencies when appropriate
+Test both success and error cases
 
-Example test structure:
+Mock external dependencies if needed
 
-```typescript
+Example:
+
+typescript
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { yourFunction } from '../src/your-module';
 
@@ -149,22 +142,20 @@ describe('YourModule', () => {
     });
   });
 });
-```
+📝 Code Style
+TypeScript Guidelines
+Use TypeScript for all source code
 
-## ðŸ“ Code Style
+Provide clear type annotations
 
-### TypeScript Guidelines
+Prefer interfaces over type aliases
 
-- Use TypeScript for all source code
-- Provide proper type annotations
-- Prefer interfaces over type aliases for object shapes
-- Use strict mode settings
+Use strict mode
 
-### Formatting
+Formatting
+We use Prettier and ESLint.
 
-We use Prettier and ESLint for code formatting:
-
-```bash
+bash
 # Format code
 npm run format
 
@@ -173,35 +164,34 @@ npm run lint
 
 # Fix linting issues
 npm run lint:fix
-```
+Code Organization
+Keep functions small and focused
 
-### Code Organization
+Use descriptive names
 
-- Keep functions small and focused
-- Use descriptive variable and function names
-- Add JSDoc comments for public APIs
-- Organize imports: external libraries first, then internal modules
+Add JSDoc for public APIs
 
-## ðŸ› Reporting Bugs
+Group imports: external first, internal next
 
-### Before Submitting
+🐛 Reporting Bugs
+Before Submitting
+Check if the issue already exists
 
-1. Check if the issue already exists
-2. Try to reproduce with the latest version
-3. Test in different browsers/environments
+Reproduce it with the latest version
 
-### Bug Report Template
+Test in multiple environments
 
-```markdown
+Bug Report Template:
+
+text
 **Describe the bug**
 A clear description of what the bug is.
 
 **To Reproduce**
 Steps to reproduce the behavior:
 1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+2. Click on '...'
+3. See error
 
 **Expected behavior**
 What you expected to happen.
@@ -214,65 +204,64 @@ What you expected to happen.
 
 **Additional context**
 Any other context about the problem.
-```
+💡 Feature Requests
+Before Submitting
+Check if the feature already exists
 
-## ðŸ’¡ Feature Requests
+Search existing requests
 
-### Before Submitting
+Ensure it aligns with Offly’s goals
 
-1. Check if the feature already exists
-2. Search existing feature requests
-3. Consider if it fits Offly's scope
+Feature Request Template:
 
-### Feature Request Template
-
-```markdown
+text
 **Is your feature request related to a problem?**
-A clear description of what the problem is.
+Describe the problem.
 
 **Describe the solution you'd like**
-A clear description of what you want to happen.
+Describe your ideal solution.
 
 **Describe alternatives you've considered**
-Alternative solutions or features you've considered.
+List alternative ideas.
 
 **Additional context**
-Any other context or screenshots about the feature request.
-```
+Add screenshots or context.
+🚢 Release Process
+Versioning
+We follow Semantic Versioning (SemVer):
 
-## ðŸš¢ Release Process
+MAJOR: Breaking changes
 
-### Version Numbers
+MINOR: New features (backward compatible)
 
-We use [Semantic Versioning (SemVer)](https://semver.org/):
+PATCH: Bug fixes
 
-- `MAJOR.MINOR.PATCH` (e.g., 1.2.3)
-- MAJOR: Breaking changes
-- MINOR: New features (backward compatible)
-- PATCH: Bug fixes (backward compatible)
+Release Steps
+Update version in package.json
 
-### Release Steps
+Update CHANGELOG.md
 
-1. Update version in `package.json`
-2. Update CHANGELOG.md
-3. Create a git tag
-4. Push changes and tag
-5. GitHub Actions will automatically publish to npm
+Create a git tag
 
-## ðŸ“‹ Code Review Process
+Push changes and tag
 
-### For Contributors
+GitHub Actions will publish to npm
 
-1. Keep PRs focused and reasonably sized
-2. Write clear PR descriptions
-3. Respond to feedback promptly
-4. Update your branch with latest main if needed
+📋 Code Review Process
+For Contributors
+Keep PRs focused and small
 
-### PR Template
+Write clear PR descriptions
 
-```markdown
+Address feedback promptly
+
+Sync your branch with the latest main
+
+PR Template:
+
+text
 ## Description
-Brief description of changes
+Brief description of changes.
 
 ## Type of Change
 - [ ] Bug fix
@@ -282,44 +271,44 @@ Brief description of changes
 
 ## Testing
 - [ ] Tests pass locally
-- [ ] Added tests for new functionality
+- [ ] Added tests
 - [ ] Manual testing completed
 
 ## Checklist
-- [ ] Code follows project style guidelines
-- [ ] Self-review completed
-- [ ] Documentation updated (if needed)
-- [ ] No new warnings/errors introduced
-```
+- [ ] Code follows style guidelines
+- [ ] Self-review done
+- [ ] Documentation updated
+- [ ] No new warnings/errors
+🤝 Community Guidelines
+Be Respectful
+Use inclusive language
 
-## ðŸ¤ Community Guidelines
+Respect differing views
 
-### Be Respectful
+Offer constructive feedback
 
-- Use welcoming and inclusive language
-- Be respectful of differing viewpoints
-- Give constructive feedback
-- Focus on what's best for the community
+Be Collaborative
+Share knowledge
 
-### Be Collaborative
+Help others grow
 
-- Help others learn and grow
-- Share knowledge and resources
-- Be open to learning from others
-- Ask questions when unsure
+Ask when unsure
 
-## ðŸ†˜ Getting Help
+🆘 Getting Help
+Check the README and docs
 
-If you need help:
+Browse GitHub Issues
 
-1. Check the [README](README.md) and documentation
-2. Search existing [GitHub Issues](https://github.com/AbhinayAmbati/Offly/issues)
-3. Create a new issue with detailed information
-4. Join our community discussions
+Open a new issue with full details
 
-## ðŸ“ž Contact
+Join community discussions
 
-- GitHub: [@AbhinayAmbati](https://github.com/AbhinayAmbati)
-- Email: abhinayambati4@gmail.com
+📞 Contact
+GitHub: @AbhinayAmbati
 
-Thank you for contributing to Offly! ðŸŽ‰
+Email: abhinayambati4@gmail.com
+
+📜 License
+By contributing to Offly, you agree that your contributions will be licensed under the Apache-2.0 License.
+
+Thank you for contributing to Offly! 🎉
