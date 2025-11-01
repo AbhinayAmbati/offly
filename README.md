@@ -2,7 +2,7 @@
 
 > A lightweight plugin that makes any web app offline-first automatically.
 
-[![npm version](https://badge.fury.io/js/Offly.svg)](https://badge.fury.io/js/Offly)
+[![npm version](https://badge.fury.io/js/Offly.svg)]([https://badge.fury.io/js/Offly](https://www.npmjs.com/package/offly))
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
