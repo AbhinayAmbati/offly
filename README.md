@@ -2,9 +2,9 @@
 
 > A lightweight plugin that makes any web app offline-first automatically.
 
-[![npm version](https://badge.fury.io/js/Offly.svg)](https://badge.fury.io/js/Offly)
+[![npm version](https://badge.fury.io/js/offly.svg)](https://www.npmjs.com/package/offly)
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Offly is a developer tool that transforms any web application (React, Vue, Next.js, Astro, Svelte, or Vanilla JS) into an offline-first app automatically — without developers writing or managing service workers, caching logic, or sync systems manually.
 
