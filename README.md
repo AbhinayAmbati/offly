@@ -1,4 +1,4 @@
-﻿# ðŸš€ Offly
+﻿# 🚀 Offly
 
 > A lightweight plugin that makes any web app offline-first automatically.
 
@@ -6,19 +6,19 @@
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Offly is a developer tool that transforms any web application (React, Vue, Next.js, Astro, Svelte, or Vanilla JS) into an offline-first app automatically â€” without developers writing or managing service workers, caching logic, or sync systems manually.
+Offly is a developer tool that transforms any web application (React, Vue, Next.js, Astro, Svelte, or Vanilla JS) into an offline-first app automatically — without developers writing or managing service workers, caching logic, or sync systems manually.
 
-## âœ¨ Features
+## ✨ Features
 
-- ðŸ—‚ï¸ **Automatic Asset Caching** - Detects and caches static assets (.js, .css, .png, etc.)
-- ðŸ’¾ **Offline Data Persistence** - Wraps fetch() calls with IndexedDB storage
-- ðŸ”„ **Background Sync** - Queues failed requests and replays them when online
-- âš¡ **Simple React/Vue Hooks** - Use `useOfflineData()` for effortless offline data
-- ðŸ§° **CLI Tools** - `Offly init` and `Offly build` commands
-- ðŸŒ **Service Worker Generation** - Pre-configured service worker with caching strategies
-- ðŸ“¦ **Zero Configuration** - Works out of the box with sensible defaults
+- 🗂️ **Automatic Asset Caching** - Detects and caches static assets (.js, .css, .png, etc.)
+- 💾 **Offline Data Persistence** - Wraps fetch() calls with IndexedDB storage
+- 🔄 **Background Sync** - Queues failed requests and replays them when online
+- ⚡ **Simple React/Vue Hooks** - Use `useOfflineData()` for effortless offline data
+- 🧰 **CLI Tools** - `Offly init` and `Offly build` commands
+- 🌐 **Service Worker Generation** - Pre-configured service worker with caching strategies
+- 📦 **Zero Configuration** - Works out of the box with sensible defaults
 
-## ðŸ Quick Start
+## 🚀 Quick Start
 
 ### Installation
 
@@ -63,7 +63,7 @@ npx Offly build
 
 This automatically injects service worker registration into your built HTML files.
 
-## ðŸ“– Usage
+## 📖 Usage
 
 ### Basic Fetch Wrapper
 
@@ -120,7 +120,7 @@ function TodoList() {
 
   return (
     <div>
-      {isOffline && <div className="offline-banner">ðŸ“´ Offline Mode</div>}
+      {isOffline && <div className="offline-banner">🔴 Offline Mode</div>}
       
       <ul>
         {todos.map(todo => (
@@ -159,7 +159,7 @@ const config = createOfflyConfig({
 });
 ```
 
-## ðŸ§° CLI Commands
+## 🧰 CLI Commands
 
 ### `Offly init`
 
@@ -196,7 +196,7 @@ npx Offly build [options]
 2. Injects service worker registration into HTML files
 3. Generates cache manifest with asset list
 
-## âš™ï¸ Configuration
+## ⚙️ Configuration
 
 Offly uses `.Offlyrc.json` for configuration:
 
@@ -244,7 +244,7 @@ Offly uses `.Offlyrc.json` for configuration:
 | `sync.maxRetries` | `number` | Max retry attempts for failed requests |
 | `sync.retryDelay` | `number` | Delay between retries (ms) |
 
-## ðŸŽ¯ Caching Strategies
+## 🎯 Caching Strategies
 
 ### Cache-First
 1. Check cache first
@@ -269,7 +269,7 @@ Offly uses `.Offlyrc.json` for configuration:
 
 **Best for:** Content that changes occasionally but needs fast loading
 
-## ðŸ”„ Background Sync
+## 🔄 Background Sync
 
 Offly automatically queues failed POST/PUT/PATCH/DELETE requests and replays them when the network returns:
 
@@ -281,15 +281,15 @@ function SyncStatus() {
   
   return (
     <div>
-      {syncing && <span>ðŸ”„ Syncing...</span>}
-      {pending > 0 && <span>ðŸ“¤ {pending} pending</span>}
-      {failed > 0 && <span>âŒ {failed} failed</span>}
+      {syncing && <span>🔄 Syncing...</span>}
+      {pending > 0 && <span>📤 {pending} pending</span>}
+      {failed > 0 && <span>❌ {failed} failed</span>}
     </div>
   );
 }
 ```
 
-## ðŸ› ï¸ API Reference
+## 🛠️ API Reference
 
 ### Core Functions
 
@@ -379,7 +379,7 @@ await cacheManager.deleteEntry('/api/todos', 'GET');
 const stats = await cacheManager.getStats();
 ```
 
-## ðŸŽ¨ Framework Integration
+## 🎨 Framework Integration
 
 ### React
 
@@ -479,7 +479,7 @@ function MyApp({ Component, pageProps }) {
 </html>
 ```
 
-## ðŸš€ Examples
+## 🚀 Examples
 
 ### Todo App with Offline Support
 
@@ -527,10 +527,10 @@ export default function TodoApp() {
   return (
     <div className="todo-app">
       <header>
-        <h1>ðŸ“ Offline Todo App</h1>
+        <h1>📝 Offline Todo App</h1>
         <div className="status">
-          {isOffline ? 'ðŸ“´ Offline' : 'ðŸŒ Online'}
-          {syncStatus.pending > 0 && ` â€¢ ${syncStatus.pending} pending`}
+          {isOffline ? '🔴 Offline' : '🌐 Online'}
+          {syncStatus.pending > 0 && ` • ${syncStatus.pending} pending`}
         </div>
       </header>
 
@@ -562,19 +562,19 @@ export default function TodoApp() {
 }
 ```
 
-## ðŸ› Troubleshooting
+## 🛠 Troubleshooting
 
 ### Service Worker Not Registering
 
 Make sure the service worker file is served from the same origin:
 
 ```html
-<!-- âœ… Correct -->
+<!-- ✅ Correct -->
 <script>
   navigator.serviceWorker.register('/Offly-sw.js');
 </script>
 
-<!-- âŒ Wrong -->
+<!-- ❌ Wrong -->
 <script>
   navigator.serviceWorker.register('https://cdn.example.com/Offly-sw.js');
 </script>
@@ -582,8 +582,8 @@ Make sure the service worker file is served from the same origin:
 
 ### Cache Not Working
 
-1. Check if service worker is active in DevTools â†’ Application â†’ Service Workers
-2. Verify cache entries in DevTools â†’ Application â†’ Cache Storage
+1. Check if service worker is active in DevTools → Application → Service Workers
+2. Verify cache entries in DevTools → Application → Cache Storage
 3. Enable debug mode in `.Offlyrc.json`:
 
 ```json
@@ -630,7 +630,7 @@ module.exports = {
 }
 ```
 
-## ðŸ¤ Contributing
+## 🤝 Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
@@ -640,17 +640,17 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 4. Push to the branch: `git push origin feature/amazing-feature`
 5. Open a Pull Request
 
-## ðŸ“„ License
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## ðŸ™ Acknowledgments
+## 🙏 Acknowledgments
 
 - [Workbox](https://developers.google.com/web/tools/workbox) for service worker utilities
 - [Dexie.js](https://dexie.org/) for IndexedDB wrapper
 - [Commander.js](https://github.com/tj/commander.js/) for CLI interface
 
-## ðŸ“š Learn More
+## 📚 Learn More
 
 - [Service Workers MDN](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
 - [Cache API MDN](https://developer.mozilla.org/en-US/docs/Web/API/Cache)
@@ -659,4 +659,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Made with â¤ï¸ by developers, for developers who want offline-first apps without the complexity.**
+**Made with ❤️ by developers, for developers who want offline-first apps without the complexity.**
