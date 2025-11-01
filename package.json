@@ -1,6 +1,6 @@
 {
   "name": "offly",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A lightweight plugin that makes any web app offline-first automatically",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
