@@ -1,21 +1,19 @@
-﻿Contributing to Offly
-Thank you for your interest in contributing to Offly! We welcome contributions from everyone.
+🛠️ Contributing to Offly
+Thank you for your interest! Everyone is welcome—follow these steps and guidelines to contribute effectively.
 
 🚀 Getting Started
 Prerequisites
-Node.js 16 or higher
+Node.js 16+
 
 npm or yarn
 
 Git
 
-Setting Up the Development Environment
-Fork the repository
-
-Clone your fork
+Setup Instructions
+Fork and Clone
 
 bash
-git clone https://github.com/your-username/Offly.git
+git clone https://github.com/AbhinayAmbati/Offly.git
 cd Offly
 Install dependencies
 
@@ -29,51 +27,37 @@ Run tests
 
 bash
 npm test
-🛠️ Development Workflow
-Project Structure
+🔨 Development Workflow
+Project Structure Overview
 text
 Offly/
-├── src/
-│   ├── cli/                 # CLI commands
-│   │   ├── commands/        # Individual CLI commands
-│   │   └── utils/           # CLI utilities
-│   ├── runtime/             # Runtime library
-│   │   ├── cacheManager.ts  # Cache management
-│   │   ├── syncManager.ts   # Background sync
-│   │   ├── fetchWrapper.ts  # Enhanced fetch
-│   │   └── useOfflineData.ts# React hooks
-│   ├── types/               # TypeScript definitions
-│   ├── index.ts             # Main export
-│   └── react.ts             # React-specific exports
-├── tests/                   # Test files
-└── dist/                    # Built files
-Making Changes
-Create a feature branch:
+├── src/         # Source code
+│   ├── cli/     # CLI commands and utilities
+│   ├── runtime/ # Core runtime modules
+│   ├── types/   # TypeScript definitions
+│   ├── index.ts # Main entry
+│   └── react.ts # React exports
+├── tests/       # Unit and integration tests
+└── dist/        # Build output
+How to Contribute
+Create a branch:
 
 bash
-git checkout -b feature/your-feature-name
-Make your changes.
+git checkout -b feature/my-feature
+Make your changes and add tests.
 
-Add tests for new functionality.
-
-Run the test suite:
+Run:
 
 bash
-npm test
-Build the project:
+npm test            # Run all tests
+npm run build       # Compile project
+npm run lint        # Lint code
+Commit:
 
 bash
-npm run build
-Run linting:
-
-bash
-npm run lint
-Commit your changes:
-
-bash
-git commit -m "feat: add your feature description"
-🧾 Commit Messages
-We follow the Conventional Commits standard.
+git commit -m "feat: short description of your change"
+🧾 Commit Message Conventions
+Use Conventional Commits:
 
 feat: - New features
 
@@ -81,234 +65,152 @@ fix: - Bug fixes
 
 docs: - Documentation updates
 
-style: - Code style changes
+style: - Formatting, missing semi colons, etc
 
-refactor: - Code refactoring
+refactor: - Code restructuring
 
-test: - Adding or updating tests
+test: - Adding tests
 
-chore: - Maintenance tasks
+chore: - Maintenance work
 
 Examples:
 
-feat: add Vue.js composables support
+feat: add Vue.js support
 
-fix: resolve cache expiration bug
+fix: cache expiration bug
 
-docs: update README with new examples
+docs: update README with usage examples
 
 🧪 Testing
-Running Tests
+Place tests in tests/
+
+Name tests descriptively
+
+Cover success and error cases
+
+Run tests:
+
 bash
-# Run all tests
-npm test
-
-# Watch mode
-npm run test:watch
-
-# With coverage
-npm run test:coverage
-
-# With UI
-npm run test:ui
-Writing Tests
-Place all test files under tests/
-
-Use descriptive test names
-
-Test both success and error cases
-
-Mock external dependencies if needed
-
+npm test             # All tests
+npm run test:watch   # Watch mode
+npm run test:coverage# Coverage report
+npm run test:ui      # Interactive UI
 Example:
 
 typescript
-import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { yourFunction } from '../src/your-module';
+import { describe, it, expect } from 'vitest';
 
-describe('YourModule', () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
-  });
-
-  describe('yourFunction', () => {
-    it('should handle valid input correctly', () => {
-      const result = yourFunction('valid-input');
-      expect(result).toBe('expected-output');
-    });
-
-    it('should handle error cases gracefully', () => {
-      expect(() => yourFunction(null)).toThrow('Expected error message');
-    });
+describe('myFunction', () => {
+  it('returns expected output', () => {
+    expect(myFunction('input')).toBe('output');
   });
 });
-📝 Code Style
-TypeScript Guidelines
-Use TypeScript for all source code
+📝 Code Style and Organization
+Use TypeScript everywhere
 
-Provide clear type annotations
+Strict type annotations (prefer interface over type)
 
-Prefer interfaces over type aliases
-
-Use strict mode
-
-Formatting
-We use Prettier and ESLint.
+Format with Prettier, lint with ESLint:
 
 bash
-# Format code
-npm run format
+npm run format     # Format code
+npm run lint       # Lint
+npm run lint:fix   # Auto-fix issues
+Keep functions small and clear
 
-# Check linting
-npm run lint
+Use meaningful names
 
-# Fix linting issues
-npm run lint:fix
-Code Organization
-Keep functions small and focused
+Add JSDoc for exported functions
 
-Use descriptive names
+Organize imports: external, then internal
 
-Add JSDoc for public APIs
+🐛 Bug Reports
+Before reporting:
 
-Group imports: external first, internal next
+Check existing issues
 
-🐛 Reporting Bugs
-Before Submitting
-Check if the issue already exists
+Update to latest version
 
-Reproduce it with the latest version
+Reproduce in a minimal example
 
-Test in multiple environments
-
-Bug Report Template:
+Report template:
 
 text
-**Describe the bug**
-A clear description of what the bug is.
-
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '...'
-3. See error
-
-**Expected behavior**
-What you expected to happen.
-
-**Environment:**
-- Offly version: [e.g. 0.1.0]
-- Browser: [e.g. Chrome 91]
-- Framework: [e.g. React 18.2.0]
-- Node.js version: [e.g. 16.14.0]
-
-**Additional context**
-Any other context about the problem.
+**Describe the bug**: What is the problem?
+**To Reproduce**: Steps (list, short)
+**Expected behavior**: What you anticipated
+**Environment**: Offly version, Browser, Framework, Node.js version
+**Additional context**: Logs, screenshots, etc
 💡 Feature Requests
-Before Submitting
-Check if the feature already exists
+Before requesting:
 
-Search existing requests
+Search features/issues
 
-Ensure it aligns with Offly’s goals
+Make sure idea fits Offly’s focus
 
-Feature Request Template:
+Request template:
 
 text
-**Is your feature request related to a problem?**
-Describe the problem.
+**Problem statement**
+**Proposed solution**
+**Alternatives considered**
+**Additional context** (optional)
+🚢 Release & Versioning
+Uses Semantic Versioning:
 
-**Describe the solution you'd like**
-Describe your ideal solution.
+MAJOR: breaking change
 
-**Describe alternatives you've considered**
-List alternative ideas.
+MINOR: new feature (backwards-compatible)
 
-**Additional context**
-Add screenshots or context.
-🚢 Release Process
-Versioning
-We follow Semantic Versioning (SemVer):
+PATCH: bug fix
 
-MAJOR: Breaking changes
+Release steps:
 
-MINOR: New features (backward compatible)
-
-PATCH: Bug fixes
-
-Release Steps
-Update version in package.json
+Bump version in package.json
 
 Update CHANGELOG.md
 
-Create a git tag
+Tag and push
 
-Push changes and tag
+GitHub Actions publishes automatically
 
-GitHub Actions will publish to npm
+📋 Code Review & Pull Requests
+Keep PRs focused, concise
 
-📋 Code Review Process
-For Contributors
-Keep PRs focused and small
+Use checklist (template auto-filled on new PR):
 
-Write clear PR descriptions
+ PR description written
 
-Address feedback promptly
+ Bug fix/Feature/Docs/Breaking change ticked
 
-Sync your branch with the latest main
+ All tests pass locally
 
-PR Template:
+ Code style check
 
-text
-## Description
-Brief description of changes.
+ Documentation updates if needed
 
-## Type of Change
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Breaking change
-- [ ] Documentation update
+Sync with latest main; address review comments
 
-## Testing
-- [ ] Tests pass locally
-- [ ] Added tests
-- [ ] Manual testing completed
-
-## Checklist
-- [ ] Code follows style guidelines
-- [ ] Self-review done
-- [ ] Documentation updated
-- [ ] No new warnings/errors
 🤝 Community Guidelines
-Be Respectful
-Use inclusive language
+Be respectful and inclusive
 
-Respect differing views
+Collaborate and offer help
 
-Offer constructive feedback
-
-Be Collaborative
-Share knowledge
-
-Help others grow
-
-Ask when unsure
+Avoid dismissive or confrontational responses
 
 🆘 Getting Help
-Check the README and docs
+Check: README, documentation, existing issues/discussions
 
-Browse GitHub Issues
+Ask by opening a new issue
 
-Open a new issue with full details
+Join discussions for help/proposals
 
-Join community discussions
-
-📞 Contact
+Contact:
 GitHub: @AbhinayAmbati
-
 Email: abhinayambati4@gmail.com
 
 📜 License
-By contributing to Offly, you agree that your contributions will be licensed under the Apache-2.0 License.
+Contributions are licensed under Apache-2.0.
 
-Thank you for contributing to Offly! 🎉
+Thank you for helping make Offly better! 🎉
+
